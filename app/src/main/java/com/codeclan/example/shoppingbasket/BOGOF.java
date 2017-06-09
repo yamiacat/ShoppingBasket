@@ -11,7 +11,7 @@ public class BOGOF implements Offering {
     }
 
     @Override
-    public int getOffer(ArrayList<Item> allItems) {
+    public int getOffer(ArrayList<Item> allItems, int totalPrice) {
         int savings = 0;
         int eligibleItems = 0;
         for (Item item : allItems) {

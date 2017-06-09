@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public interface Offering {
 
-    int getOffer(ArrayList<Item> allItems);
+    int getOffer(ArrayList<Item> allItems, int totalPrice);
 
 }

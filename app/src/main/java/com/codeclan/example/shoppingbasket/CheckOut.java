@@ -25,7 +25,7 @@ public class CheckOut {
     }
 
     public void applyOffer(Offering offer) {
-        int savings = offer.getOffer(this.allItems);
+        int savings = offer.getOffer(this.allItems, this.totalPrice);
         this.totalPrice -= savings;
 
     }
