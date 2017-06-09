@@ -48,4 +48,23 @@ public class PercentOffTest {
         assertEquals(2421, checkOut.getPrice());
     }
 
+    @Test
+    public void checkOutCanAcceptPercentOffAsLoyaltyCard() {
+        ShoppingBasket shoppingBasket = new ShoppingBasket();
+        Item item2 = new Item("Houmous", 100);
+        Item item3 = new Item("Single Malt", 2500);
+        shoppingBasket.addToBasket(item2);
+        shoppingBasket.addToBasket(item2);
+        shoppingBasket.addToBasket(item3);
+
+        PercentOff percentOff = new PercentOff(0, 2);
+        CheckOut checkOut = new CheckOut(shoppingBasket);
+
+        checkOut.applyOffer(percentOff);
+
+        assertEquals(2646, checkOut.getPrice());
+    }
+
+
+
 }
