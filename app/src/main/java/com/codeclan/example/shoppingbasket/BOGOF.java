@@ -12,6 +12,14 @@ public class BOGOF implements Offering {
 
     @Override
     public int getOffer(ArrayList<Item> allItems, int totalPrice) {
+        int savings = calculateSavings(allItems, totalPrice);
+        return savings;
+    }
+
+
+//IS THIS GOOD ENCAPSULATION?
+
+    private int calculateSavings(ArrayList<Item> allItems, int totalPrice) {
         int savings = 0;
         int eligibleItems = 0;
         for (Item item : allItems) {
@@ -22,4 +30,8 @@ public class BOGOF implements Offering {
         savings += (eligibleItems/2) * offerProduct.getPrice();
         return savings;
     }
+
+
+
+
 }

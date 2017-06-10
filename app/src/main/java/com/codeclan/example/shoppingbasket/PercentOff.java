@@ -14,10 +14,19 @@ public class PercentOff implements Offering {
 
     @Override
     public int getOffer(ArrayList<Item> allItems, int totalPrice) {
+        int saving = calculateSavings(allItems, totalPrice);
+        return saving;
+    }
+
+
+    //DOES THIS MAKE SENSE?
+
+    private int calculateSavings(ArrayList<Item> allItems, int totalPrice) {
         int saving = 0;
         if (totalPrice >= this.lowerLimit) {
             saving += (totalPrice * this.percentSaving)/100;
         }
         return saving;
     }
+
 }
